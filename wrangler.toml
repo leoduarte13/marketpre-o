@@ -7,7 +7,8 @@ binding = "DB"
 database_name = "marketpreco-db"
 database_id = "edbf75b1-0cc9-4c80-ac68-f0674e3d53bc"
 
-# Após ativar R2 na conta, crie o bucket e habilite este binding:
-# [[r2_buckets]]
-# binding = "VIDEOS_BUCKET"
-# bucket_name = "marketpreco-videos"
+[[kv_namespaces]]
+binding = "IMAGES"
+id = "9ee0bcdd5260440a89ea7f144591953d"
+
+# R2 pode ser ativado depois para armazenar vídeos binários.
