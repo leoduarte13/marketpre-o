@@ -17,12 +17,14 @@ Aplicação independente de gestão de catálogo, pesquisas, precificação, ví
 - API Worker: `marketpreco-app.leoduarte13.workers.dev`
 - Banco D1: `marketpreco-db`
 - KV de imagens: `marketpreco-images`
-- R2: integração pronta para arquivos de vídeo, pendente de ativação na conta Cloudflare.
+- KV de imagens: `marketpreco-images`.
+- KV de vídeos: `marketpreco-video-files` (arquivos de até 24 MB).
+- R2: opcional para arquivos de vídeo maiores que 24 MB; depende de ativação na conta Cloudflare.
 
 ## Deploy automático pelo GitHub Actions
 O workflow publica o Worker e a interface Pages a cada atualização na branch `main`. Configure estes dois repositórios secretos em **Settings → Secrets and variables → Actions**:
 
-- `CLOUDFLARE_API_TOKEN`: token Cloudflare com Workers Scripts Write, Pages Write e D1 Edit.
+- `CLOUDFLARE_API_TOKEN`: token Cloudflare com Workers Scripts Write, Pages Write, D1 Edit e Workers KV Storage Edit.
 - `CLOUDFLARE_ACCOUNT_ID`: ID da conta Cloudflare vinculada.
 
 O deploy direto já foi realizado pela conexão Cloudflare. O workflow passa a automatizar os próximos commits assim que os dois secrets forem configurados.
