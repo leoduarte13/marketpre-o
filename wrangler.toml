@@ -1,0 +1,13 @@
+name = "marketpreco-app"
+main = "worker.js"
+compatibility_date = "2026-11-24"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "marketpreco-db"
+database_id = "edbf75b1-0cc9-4c80-ac68-f0674e3d53bc"
+
+# Após ativar R2 na conta, crie o bucket e habilite este binding:
+# [[r2_buckets]]
+# binding = "VIDEOS_BUCKET"
+# bucket_name = "marketpreco-videos"
