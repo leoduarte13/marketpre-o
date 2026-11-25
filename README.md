@@ -1,22 +1,20 @@
 # MARKETPREÇO
 
-Aplicação independente de gestão de produtos, construída sobre Cloudflare Workers e D1.
+Aplicação de gestão de catálogo, pesquisas, precificação, vídeos e estoque, executada em Cloudflare Workers com persistência em Cloudflare D1.
 
-## Estrutura inicial
+## Funcionalidades
+- Catálogo com cadastro, edição, exclusão, busca e filtros.
+- Importação Excel/CSV e exportação CSV.
+- Histórico de pesquisas por produto e marketplace.
+- Simulador de preços com margem mínima e taxas por canal.
+- Biblioteca de vídeos com links associados aos produtos.
+- Controle de estoque interno.
+- Relatórios e backup/restauração JSON.
+- API REST persistida no D1.
 
-- `worker.js`: Worker HTTP, API de produtos e interface web inicial.
-- Persistência: Cloudflare D1 (banco `marketpreco-db`).
+## Infraestrutura
+- Worker: `marketpreco-app`
+- D1: `marketpreco-db`
+- R2: endpoints preparados; a ativação do serviço e o binding do bucket ainda dependem de habilitação na conta Cloudflare.
 
-## Rotas
-
-- `/` — interface web
-- `/api/health` — verificação de saúde
-- `/api/products` — listagem de produtos
-
-## Estado atual
-
-A base inicial do Worker foi versionada. Dashboard e catálogo consultam os produtos armazenados no D1. Pesquisas, precificação interativa, vídeos e configurações ainda precisam ser implementados e testados antes de serem considerados concluídos.
-
-## Publicação
-
-O Worker ativo é gerenciado no Cloudflare. Este repositório ainda precisa receber a configuração de deploy/integração contínua para automatizar futuras publicações.
+A aplicação não usa Supabase como banco de dados ou backend.
