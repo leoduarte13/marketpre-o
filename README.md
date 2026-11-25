@@ -7,7 +7,7 @@ Aplicação independente de gestão de catálogo, pesquisas, precificação, ví
 - Importação Excel/CSV, preservação de campos e exportação CSV.
 - Histórico de pesquisas por produto e marketplace, com análise de links de anúncios.
 - Simulador de preços com margem mínima e taxas por canal.
-- Biblioteca de vídeos com vínculos aos produtos e suporte a upload via R2 quando habilitado.
+- Biblioteca de vídeos com vínculos aos produtos; upload até 24 MB pelo Cloudflare KV e arquivos maiores via R2 quando habilitado.
 - Controle de estoque interno.
 - Relatórios e backup/restauração JSON.
 - Migração automática das imagens antigas para Cloudflare KV.
@@ -16,7 +16,6 @@ Aplicação independente de gestão de catálogo, pesquisas, precificação, ví
 - Interface Pages: `marketpreco.pages.dev`
 - API Worker: `marketpreco-app.leoduarte13.workers.dev`
 - Banco D1: `marketpreco-db`
-- KV de imagens: `marketpreco-images`
 - KV de imagens: `marketpreco-images`.
 - KV de vídeos: `marketpreco-video-files` (arquivos de até 24 MB).
 - R2: opcional para arquivos de vídeo maiores que 24 MB; depende de ativação na conta Cloudflare.
