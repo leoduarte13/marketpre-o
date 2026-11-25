@@ -1,4 +1,4 @@
-name: Deploy MARKETPREÇO to Cloudflare Workers
+name: Deploy MARKETPREÇO to Cloudflare
 on:
   push:
     branches: [main]
@@ -6,15 +6,22 @@ on:
       - 'worker.js'
       - 'wrangler.toml'
       - 'migrations/**'
+      - 'public/**'
       - '.github/workflows/deploy-cloudflare.yml'
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy Worker
+      - name: Deploy Cloudflare Worker and D1 binding
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+      - name: Deploy Cloudflare Pages interface
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=marketpreco
