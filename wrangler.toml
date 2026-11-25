@@ -11,4 +11,8 @@ database_id = "edbf75b1-0cc9-4c80-ac68-f0674e3d53bc"
 binding = "IMAGES"
 id = "9ee0bcdd5260440a89ea7f144591953d"
 
-# R2 pode ser ativado depois para armazenar vídeos binários.
+[[kv_namespaces]]
+binding = "VIDEOS"
+id = "ee5d50e49c6e40c8a6fc736d0ace2ae0"
+
+# R2 pode ser vinculado para arquivos maiores que 24 MB.
